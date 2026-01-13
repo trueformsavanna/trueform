@@ -1,0 +1,353 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trueform | Human-Guided AI for Service Businesses</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --accent: #0f4c81;
+      --accent-soft: rgba(15, 76, 129, 0.15);
+      --border: #e5e5e5;
+      --shadow-light: rgba(0, 0, 0, 0.05);
+      --shadow-dark: rgba(0, 0, 0, 0.1);
+      --grey-bg: #f7f7f7;
+      --navy: #0f4c81;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+      box-shadow: 0 2px 6px var(--shadow-light);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+
+    .btn {
+      padding: 0.75rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    button.btn {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    /* ---------- HEADER / HERO ---------- */
+    header {
+      width: 100%;
+      padding: 7rem 1.5rem 4.5rem;
+      background: radial-gradient(circle at 20% 20%, var(--accent-soft), transparent 60%),
+                  linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    }
+
+    header .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+ section {
+  padding: 4.5rem 1.5rem;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px var(--shadow-light);
+}
+
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ---------- PROBLEM ---------- */
+    #problem {
+      background: var(--grey-bg);
+      text-align: center;
+    }
+
+    /* ---------- SERVICES ---------- */
+    #services {
+      background: linear-gradient(180deg,#ffffff 0%,#f6f9fc 100%);
+    }
+
+    .grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- WHY AI ---------- */
+    .grey-section {
+      background: var(--grey-bg);
+      text-align: center;
+    }
+
+    /* ---------- STEPS ---------- */
+#steps {
+  background: var(--navy); /* full-width navy */
+  color: #fff;
+  padding: 3rem 0;         /* vertical padding */
+  margin: 0;               /* remove section margin */
+  border-radius: 0;        /* no rounded corners */
+  box-shadow: none;        /* remove shadow */
+  max-width: 100%;         /* override global section max-width */
+}
+
+
+
+    .steps-grid {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .steps-grid::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .step {
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .step::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .step-number {
+      font-size: 5rem;
+      font-weight: 800;
+      background: linear-gradient(to bottom, #ccc 20%, var(--navy) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- CONTACT ---------- */
+    #contact { background: #fff; }
+
+    form {
+      max-width: 500px;
+      margin: 2rem auto 0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+    }
+	/* ---------- BUTTON HOVER ---------- */
+.btn:hover {
+  background: #0d3a62; /* darker navy for hover */
+  transition: background 0.3s ease;
+}
+
+/* ---------- FOOTER LINK HOVER ---------- */
+footer a:hover {
+  text-decoration: underline;
+  color: #0d3a62; /* slightly darker navy */
+  transition: color 0.3s ease;
+}
+
+/* ---------- SERVICE CARD HOVER ---------- */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo {
+  height: 90px;       /* adjust if needed */
+  width: auto;
+  display: block;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container">
+<a href="#">
+  <img src="Trueform Logo.png" alt="Trueform logo" class="logo">
+</a>
+
+    <div>
+      <a href="#services">Services</a>
+      <a href="#steps">How It Works</a>
+      <a href="#contact" class="btn">Free Gap Check</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="container">
+    <p style="color:var(--accent);font-weight:500;">Human-guided AI for service businesses</p>
+    <h1>We help service businesses stop losing customers.</h1>
+    <p style="max-width:700px;">
+      Trueform identifies gaps in your online presence — missed calls, inconsistent content,
+      outdated or missing websites — and fills them using human-guided AI.
+    </p>
+    <a href="#contact" class="btn">Get a Free Gap Check</a>
+  </div>
+</header>
+
+<section id="problem">
+  <h2 style="color: var(--navy);">THE PROBLEM</h2>
+  <p>
+    Service businesses often miss potential customers because of outdated websites, inconsistent social media, and unanswered calls.
+  </p>
+</section>
+
+
+
+<section id="services">
+  <h2 style="text-align:center;">Our Services</h2>
+  <div class="grid grid-3">
+    <div class="service-card">
+      <i class="fas fa-laptop"></i>
+      <h3>AI-Built Websites</h3>
+      <p>Clean, fast websites built with AI and refined by humans.</p>
+    </div>
+    <div class="service-card">
+      <i class="fab fa-facebook"></i>
+      <h3>Content & Social Media</h3>
+      <p>AI-assisted content shaped by real people — never robotic.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-phone"></i>
+      <h3>AI Phone Assistant</h3>
+      <p>Captures missed calls so no lead disappears.</p>
+    </div>
+  </div>
+</section>
+
+<section class="grey-section">
+  <h2 style="color: var(--navy);">Why human-guided AI</h2>
+  <p>
+    AI alone is fast — but it’s not thoughtful. People provide judgment, taste, and accountability.
+  </p>
+  <p>
+    At Trueform, AI does the heavy lifting. People guide every decision.
+  </p>
+</section>
+
+
+<section id="steps">
+  <div class="container">
+    <h2 style="text-align:center; font-size:7rem; font-weight:800; margin:0.5rem 0 2rem 0;">HOW IT WORKS</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-number">1</div><p>We review your systems.</p></div>
+      <div class="step"><div class="step-number">2</div><p>We implement tailored AI.</p></div>
+      <div class="step"><div class="step-number">3</div><p>We automate quietly.</p></div>
+      <div class="step"><div class="step-number">4</div><p>You stay focused.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="contact">
+  <h2 style="text-align:center; font-size:2.2rem;">Get A Free Gap Check</h2>
+  <form>
+    <input placeholder="Name" />
+    <input placeholder="Business name" />
+    <input placeholder="Email" />
+    <textarea placeholder="What feels like the biggest gap?"></textarea>
+    <button class="btn">Submit</button>
+  </form>
+</section>
+
+<footer style="background:#f7f7f7; text-align:center; padding:2rem 1.5rem; font-size:0.95rem; color:var(--text);">
+  <p><b>Trueform </b>· Human-guided AI for service businesses</p>
+  <p>
+    <a href="tel:+1234567890" style="color:var(--accent); text-decoration:none; margin-right:1rem;">Call us</a>
+    <a href="#contact" style="color:var(--accent); text-decoration:none;">Free Gap Check</a>
+  </p>
+</footer>
+</body>
+</html>
