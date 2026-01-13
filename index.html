@@ -334,14 +334,19 @@ footer a:hover {
 
 <section id="contact">
   <h2 style="text-align:center; font-size:2.2rem;">Get A Free Gap Check</h2>
-  <form name="gap-check" method="POST" data-netlify="true">
+ <form name="gap-check" method="POST" data-netlify="true">
 
-    <input placeholder="Name" />
-    <input placeholder="Business name" />
-    <input placeholder="Email" />
-    <textarea placeholder="What feels like the biggest gap?"></textarea>
-    <button class="btn">Submit</button>
-  </form>
+  <input type="hidden" name="form-name" value="gap-check">
+
+  <input name="name" placeholder="Name" required />
+  <input name="business" placeholder="Business name" />
+  <input name="email" type="email" placeholder="Email" required />
+  <textarea name="message" placeholder="What feels like the biggest gap?"></textarea>
+
+  <button class="btn" type="submit">Submit</button>
+
+</form>
+
 </section>
 
 <footer style="background:#f7f7f7; text-align:center; padding:2rem 1.5rem; font-size:0.95rem; color:var(--text);">
@@ -353,6 +358,7 @@ footer a:hover {
 </footer>
 </body>
 </html>
+
 
 
 
