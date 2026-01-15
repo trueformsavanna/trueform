@@ -310,54 +310,7 @@ footer a:hover {
     font-size: 1rem;
   }
 }
-@media (max-width: 768px) {
 
-  /* 1️⃣ Remove "How It Works" from mobile nav only */
-  nav a[href="#steps"] {
-    display: none;
-  }
-
-  /* 2️⃣ Change hero headline text on mobile only */
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  header h1::after {
-    content: "Stop losing customers";
-  }
-
-  header h1 {
-    visibility: hidden;
-    position: relative;
-  }
-
-  header h1::after {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  /* 3️⃣ Make steps inline: "1 Text" instead of stacked */
-  .step {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
-    text-align: left;
-  }
-
-  .step-number {
-    font-size: 2rem;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .step p {
-    margin: 0;
-  }
-
-}
 /* ===== MOBILE FIXES ONLY – SAFE OVERRIDES ===== */
 @media (max-width: 768px) {
 
@@ -396,6 +349,20 @@ footer a:hover {
   }
 }
 
+/* ===== MOBILE ONLY: BIGGER STEP ICONS + TEXT ===== */
+@media (max-width: 768px) {
+
+  /* Make step numbers bigger */
+  .step-number {
+    font-size: 3rem;
+  }
+
+  /* Make step text bigger */
+  .step p {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
 
   </style>
 </head>
