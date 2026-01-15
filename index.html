@@ -363,6 +363,32 @@ footer a:hover {
     font-weight: 500;
   }
 }
+/* ===== MOBILE ONLY: INLINE STEPS + BIGGER TEXT ===== */
+@media (max-width: 768px) {
+
+  /* Keep steps inline: "1 Text" */
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  /* Bigger numbers */
+  .step-number {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bigger step text */
+  .step p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
 
   </style>
 </head>
