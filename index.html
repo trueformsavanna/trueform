@@ -244,6 +244,157 @@ footer a:hover {
   display: block;
 }
 
+/* ---------- MOBILE OPTIMIZATION ---------- */
+@media (max-width: 768px) {
+
+  /* Global spacing */
+  section {
+    padding: 3rem 1.25rem;
+    margin: 1.5rem auto;
+  }
+
+  header {
+    padding: 5rem 1.25rem 3.5rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Navigation */
+ nav .container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  nav a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  /* Services grid → stack */
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* HOW IT WORKS section */
+  #steps h2 {
+    font-size: 3rem !important;
+  }
+
+  .steps-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .steps-grid::before {
+    display: none;
+  }
+
+  .step::before {
+    display: none;
+  }
+
+  .step-number {
+    font-size: 3.5rem;
+  }
+
+  /* Forms */
+  form {
+    width: 100%;
+  }
+
+  input, textarea {
+    font-size: 1rem;
+  }
+}
+
+/* ===== MOBILE FIXES ONLY – SAFE OVERRIDES ===== */
+@media (max-width: 768px) {
+
+  /* 1️⃣ Fix weird gap under mobile headline */
+  header h1 {
+    margin-bottom: 0.75rem;   /* tighten space */
+  }
+
+  header h1::after {
+    line-height: 1.2;
+  }
+
+  header p {
+    margin-top: 0.75rem;      /* normalize paragraph spacing */
+  }
+
+  /* 2️⃣ Make step text bigger */
+  .step p {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  /* 3️⃣ Keep left alignment but pull steps closer to center */
+  .steps-grid {
+    align-items: center;
+  }
+
+  .step {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .step-number {
+    font-size: 2.3rem;
+  }
+}
+
+/* ===== MOBILE ONLY: BIGGER STEP ICONS + TEXT ===== */
+@media (max-width: 768px) {
+
+  /* Make step numbers bigger */
+  .step-number {
+    font-size: 3rem;
+  }
+
+  /* Make step text bigger */
+  .step p {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+/* ===== MOBILE ONLY: INLINE STEPS + BIGGER TEXT ===== */
+@media (max-width: 768px) {
+
+  /* Keep steps inline: "1 Text" */
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  /* Bigger numbers */
+  .step-number {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* Bigger step text */
+  .step p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+/* ===== MOBILE ONLY: remove "How It Works" from sticky nav ===== */
+@media (max-width: 768px) {
+  nav a[href="#steps"] {
+    display: none;
+  }
+}
 
   </style>
 </head>
@@ -254,7 +405,6 @@ footer a:hover {
   <div class="container">
 <a href="#">
   <img src="trueform-logo.png" alt="Trueform logo" class="logo">
-
 </a>
 
     <div>
@@ -334,19 +484,13 @@ footer a:hover {
 
 <section id="contact">
   <h2 style="text-align:center; font-size:2.2rem;">Get A Free Gap Check</h2>
- <form name="gap-check" method="POST" data-netlify="true">
-
-  <input type="hidden" name="form-name" value="gap-check">
-
-  <input name="name" placeholder="Name" required />
-  <input name="business" placeholder="Business name" />
-  <input name="email" type="email" placeholder="Email" required />
-  <textarea name="message" placeholder="What feels like the biggest gap?"></textarea>
-
-  <button class="btn" type="submit">Submit</button>
-
-</form>
-
+  <form>
+    <input placeholder="Name" />
+    <input placeholder="Business name" />
+    <input placeholder="Email" />
+    <textarea placeholder="What feels like the biggest gap?"></textarea>
+    <button class="btn">Submit</button>
+  </form>
 </section>
 
 <footer style="background:#f7f7f7; text-align:center; padding:2rem 1.5rem; font-size:0.95rem; color:var(--text);">
@@ -358,8 +502,3 @@ footer a:hover {
 </footer>
 </body>
 </html>
-
-
-
-
-
